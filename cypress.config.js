@@ -9,6 +9,6 @@ module.exports = defineConfig({
   },
   "experimentalInteractiveRunEvents": true,
   "retries": 2,
-  "viewportWidth": 1920,
-  "viewportHeight": 1080,
+  "viewportWidth": 1280,
+  "viewportHeight": 660,
 });
