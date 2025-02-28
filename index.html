@@ -33,12 +33,14 @@
                     <!-- Todolist -->
                     <div class="flex items-center mb-4">
                         <input type="text" 
+                                data-cy="new-todo-input"
                                 class="leading-6 text-xs bg-gray-100 p-2 focus:outline-none text-gray-600 w-full" 
                                 x-model="newTodo" 
                                 placeholder="What needs to be done?"
                                 @keyup.enter="addTodo()"
                         />
                         <button type="submit" 
+                                data-cy="add-todo-button"
                                 class="bg-green-100 text-xs p-3 text-green-900 hover:bg-green-300 transition duration-300 focus:outline-none"
                                 @click.prevent="addTodo()"
 
@@ -47,14 +49,17 @@
                         </button>
                     </div>
 
-                    <template x-for="todo in todos">
-                        <div class="flex items-center justify-between">
+                    <template x-for="todo in todos" :key="todo.id">
+                        <div 
+                            data-cy="todo-item"
+                            class="flex items-center justify-between">
                             <div class="py-2 w-full" 
                                     style="font-size: 0.7rem;" 
                                     x-text="todo.content"
                             >
                             </div>
                             <button type="button"
+                                    data-cy="delete-todo-button"
                                     class="text-xs text-red-600 px-3 py-2 transition duration-300 hover:text-red-900 focus:outline-none"
                                     @click="deleteTodo(todo)"
                             >
